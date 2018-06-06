@@ -1,0 +1,159 @@
+
+@import '../scss/variables';
+@import '../scss/media';
+
+.navigation{
+  
+  //background behind button
+  &-background{
+    position: fixed;
+    top: 6.5rem; right: 6.5rem;
+    width: 6rem; height:6rem;
+    border-radius:50%;
+    background-image: radial-gradient($color-1st-light,$color-1st-dark);
+    z-index: 7;
+    transition: all 0.5s;
+
+    //small devices position
+    @include responsive(sm){
+      top: 3.5rem; right: 3.5rem;
+    }
+  }
+
+  
+
+  //animate menu background
+  &-background.active{
+    transform: scale(80);
+    overflow: hidden;
+  }
+
+  //menu hidden initially
+  &-menu{
+    display: none;
+    //visibility: hidden;
+    opacity: 0;
+    transition: all 2s;
+  }
+
+  //show menu on active
+  &-menu.active{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left:0; top:0;
+    height: 100vh;
+    width: 100%;
+    opacity: 1;
+    z-index: 8;
+  }
+
+  &-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-item{
+    margin: $rem-md;
+  }
+
+  &-link{
+    &:link,
+    &:visited{
+      display: inline-block;
+      padding: $rem-lg $rem-2x;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-sm;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      //sharp divide between 2 colors at 50%;
+      background-image: linear-gradient(90deg, 
+        $light-color 0%, $light-color 50%, transparent 50%);
+      background-image: #fff;
+      background-size: 100%;
+      background-position-x: -50vw;
+      background-repeat: no-repeat;
+      transition: all 0.5s;
+    }
+
+    &:hover,
+    &:active{
+      background-size:200%;
+      background-position-x: 0;
+    }
+  }
+
+  &-button{
+    position:fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6rem; right:6rem;
+    width: 7rem; height: 7rem;
+    border-radius: 50%;
+    background-color: $light-color;
+    box-shadow: $box-shadow-md;
+    z-index: 9;
+    cursor: pointer;
+
+    //small devices position
+    @include responsive(sm){
+      top: 3rem; right: 3rem;
+    }
+  }
+
+//----------------------------------------
+// NAVIGATION ICON
+
+  &-icon{
+    //three elements
+    &,
+    &::before,
+    &::after{
+      position:absolute;
+      width: 3rem;
+      //height is constant
+      height: 2px;
+      background-color: $dark-color;
+      transition: all 0.3s;
+    }
+    
+    &::before,
+    &::after{
+      //pseudo elemets need content to appear
+      content: "";
+      //height: 2px;
+    }
+
+    &::before{
+      top:-0.9rem;
+      left:0;
+    }
+    &::after{
+      top:0.9rem;
+      left:0;
+    }
+  }
+
+  /* we do it simpler with vue
+  //when background active maken middle 
+  //icon bar transparent
+  &-background.active ~ &-button &-icon{
+    background-color: transparent;
+  }*/
+  &-icon.active{
+    background-color: transparent;
+  }
+  &-icon.active::before{
+    transform: rotate(135deg);
+    top:0;
+  }
+  &-icon.active::after{
+    transform: rotate(-135deg);
+    top:0;
+  }
+
+}

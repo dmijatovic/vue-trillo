@@ -1,0 +1,19 @@
+
+//fonts 
+$font-family: 'Open Sans', sans-serif;
+/* use $rem-xs for font-size*/
+
+$font-weight-xs: 100;
+$font-weight-sm: 300;
+$font-weight-md: 400;
+$font-weight-lg: 600;
+$font-weight-xl: 900;
+
+//line height is the ratio 
+//maybe use mixin for it?
+$line-height-xs: 1;
+$line-height-sm: 1.2; 
+$line-height-md: 1.4; 
+$line-height-lg: 1.6; 
+$line-height-xl: 1.8; 
+$line-height-2x: 2;

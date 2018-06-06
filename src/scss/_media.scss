@@ -1,0 +1,73 @@
+/**
+  MEDIA QUERIES remarks
+  in media queries rem are not based on root font user defines
+  in some browsers functionality does not works properly (according to Jonas)
+  advised approach for expressing different screen sizes in media queries
+  is to use em and static default font-size of 16px. This approach will take
+  into account users that changed default fonts from 16 to larger/smaller.
+
+  So to define breakpoints in your media query follow this process
+  define breakpoints in px. Then divide breakpoint px / 16. This 
+  you em media query value to use. 
+*/
+
+/*
+  0-600px: mobile phone - xs
+  600-900: tablet portrait - sm
+  900-1200: tablet - md
+  1200-1800: normal styles (default styles we already have)
+  >1800: big desktop - xl
+*/
+
+@mixin respond-phone{
+  //@conent enables passing content
+  @media(max-width: 600px) { @content };
+}
+
+/* 
+$breakpoint agument constant 
+- phone - xs
+- tab-port - sm
+- tab-land - md
+- large - xl
+*/
+
+//ORDER MATTERS!
+//sizes xs, sm, md use min-width and xl uses max-width
+//the order need to be reversed to md, sm, xs, xl when applying
+//beacuse the order determines which style will win at the end
+//IMPORTANT! the order enables you then to apply one style for
+//multiple sizes, for example: if you want specific style for 
+//md, sm and xs then you just can use md and other will fall 
+//in the same category
+
+
+@mixin responsive($breakpoint){
+  //using if
+  //if breakpoint phone use content 
+  //passed for this breakpoint
+ 
+  @if $breakpoint == xs {
+    //estimated 600px
+    @media only screen and (max-width: 37.50em) { @content };
+  }
+
+  @if $breakpoint == sm {
+    //calculated 600 - 1024 px/16
+    //@media (min-width: 37.51em) and (max-width: 56.25em) { @content };
+    @media only screen and (max-width: 64em) { @content };
+  }
+
+  @if $breakpoint == md {
+    //calc 1024 - 1280px/16
+    @media only screen and (max-width: 80em) { @content };
+  }
+
+  //default is 1280px - 1800px
+
+  @if $breakpoint == xl {
+    //calc > 1800px 
+    @media only screen and (min-width: 112.5em) { @content };
+  }
+
+}

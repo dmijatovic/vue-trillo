@@ -1,0 +1,24 @@
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+  background-color: var(--color-light-0);
+  border-bottom: 1px solid var(--color-light-2);
+
+  padding: 2rem 5rem;
+
+  &-badge{
+    display: flex;
+  }
+
+  &-logo{
+    height: 5rem;
+  }
+
+  &-title{
+    font-size: 3rem;
+    padding: 0 2rem;
+  }
+}

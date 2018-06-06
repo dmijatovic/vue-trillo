@@ -1,0 +1,111 @@
+/**
+  This is old grid approach using floats
+  this sample uses 3 and 4 column layout
+*/
+
+@import 'variables';
+@import 'media';
+//------------------------------------------------
+//MIXINS
+//------------------------------------------------
+
+//clearing floats to add height on parent element
+//when all child elements floating
+@mixin clearfix{
+  &::after{
+    content:"";
+    display: table;
+    clear: both;
+  }
+}
+
+//-----------------------------------------------
+// GRID FLOAT LAYOUT CLASSES
+//-----------------------------------------------
+
+.row{
+  //max width set to 1600px (default)
+  max-width: $grid-width-md;
+
+  @include responsive(xl){
+    max-width: $grid-width-lg;    
+  }
+
+  @include responsive(sm){
+    max-width: $grid-width-sm;
+    padding: 0 3rem;
+  }
+
+  //background-color: $light-color;
+  //center vertically
+  margin: 0 auto; 
+
+
+  //apply margin to all rows 
+  //except the lastone
+  &:not(:last-child){
+    margin-bottom: $gutter-vertical;
+  }
+
+  //calling clearfix mixin
+  @include clearfix();
+
+
+  //COLUMN DEFINITIONS
+  
+  //ATTRIBUTE selector and partial value matching
+  //select all elements with attribute class THAT...
+  //^ => start with "col-"
+  //* => contains "col-"
+  //$ => ends with "col-"
+  [class^="col-"]{
+    
+    //background-color: $accent-color;
+    float: left;
+
+    &:not(:last-child){
+      margin-right: $gutter-horizontal;
+    }
+
+    //CONVERT TO COLUMNS from table portait
+    @include responsive (sm){
+      width: 100% !important;
+      margin-right: 0;
+      margin-bottom: $gutter-horizontal; 
+    }
+
+  }
+  
+  .col-1-of-2{
+    //make calculation that enables mixing units
+    //when using scss variables in calc we need #{$variableName}
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+  .col-1-of-3{
+    //make calculation that enables mixing units
+    //when using scss variables in calc we need #{$variableName}
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+  .col-1-of-4{
+    //make calculation that enables mixing units
+    //when using scss variables in calc we need #{$variableName}
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+  .col-2-of-3{
+    //make calculation that enables mixing units
+    //when using scss variables in calc we need #{$variableName}
+    width: calc( 2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+  }
+
+  .col-3-of-4{
+    //make calculation that enables mixing units
+    //when using scss variables in calc we need #{$variableName}
+    width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+  }
+
+
+
+}
+
+
+

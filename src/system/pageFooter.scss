@@ -1,0 +1,75 @@
+@import '../scss/variables';
+@import '../scss/media';
+
+.footer{
+  padding: 5rem 0 7rem 0;
+  background-color: $dark-color;
+  font-size: $font-size-md;
+
+  @include responsive(sm){
+    padding: 8rem 0;
+  }
+
+  &-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $rem-5x;
+  }
+
+  &-nav{
+    //do let line goes only where content is available
+    //use display: inline-block
+    display: inline-block;
+    border-top: 1px solid $grey-color;
+    padding-top: 2rem;
+    list-style: none;
+
+    @include responsive(sm){
+      width:100%;
+      text-align: center;
+    }
+  }
+
+
+  &-item{
+    display: inline-block;
+
+    &:not(:last-child){
+      margin-right: $rem-xl;
+    }
+  }
+
+  &-link{
+    &:link,
+    &:visited{
+      //display: inline-block;
+      //padding: 1rem;
+      color: $light-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    &:hover,
+    &:active{
+      color: $color-1st;
+      box-shadow: $box-shadow-md;
+    }
+  }
+
+  &-copyright{
+    border-top: 1px solid $grey-color;
+    padding-top: 2rem;
+    width: 80%;
+    float:right;
+    text-align: justify;
+    color: $light-color;
+
+    @include responsive(sm){
+      width:100%;
+      text-align: center;
+    }
+  }
+
+}

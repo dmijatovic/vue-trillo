@@ -1,0 +1,46 @@
+
+
+.t-heading-2{
+  //inline-block is to
+  display: inline-block;
+  font-size: $rem-3x;
+  text-transform: uppercase;
+  font-weight: $font-weight-lg;
+  
+  //TEXT GRADIENT EFFECT
+  //first
+  background-image: linear-gradient(to right, $color-1st, $accent-color);
+  //clip linear gradient to text
+  -webkit-background-clip: text;
+  //set text color to transparent
+  color: transparent;
+  letter-spacing: $rem-xs;
+  transition: all .3s;
+  
+  &:hover{
+    //skewing leters and background!
+    transform: skewY(7deg) skewX(9deg);
+  }
+}
+
+
+.t-heading-3{
+  font-size: $font-size-md;
+  font-weight: $font-weight-lg;
+  text-transform: uppercase;
+}
+
+.t-paragraph{
+  font-size: $font-size-md;
+
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+
+}
+
+//change style of selected text
+::selection{
+  background-color: $color-1st-dark;
+  color: $light-color;
+}

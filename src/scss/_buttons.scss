@@ -1,0 +1,112 @@
+
+@import 'variables';
+
+/*
+  only when a used 
+*/
+.btn,
+.btn:link,
+.btn:visited{
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;  
+  text-align: center;  
+  color: $dark-color;
+  border-radius: $rem-xs;
+  //animate hover and active movements
+  //transition needs to be present here (inital state)
+  transition: all .2s;
+  z-index: 1;
+
+  //button styling
+  border: none;
+}
+
+//on hover rise button up
+.btn:hover{
+  //transform: translateY(-0.1em);
+  box-shadow: $box-shadow-sm;  
+}
+
+//on click lower down (from inital position)
+.btn:active,
+.btn:focus{
+  transform: translateY(0.05em);
+  box-shadow: $box-shadow-xs;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;  
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+  transform: scale(0, 0);
+  opacity: .3;
+  transition: 0s;
+}
+
+//by default light color is used
+//only when btn-white we change this 
+//see .btn-white (line 86+)
+.btn.ripple:after{
+  background-image: radial-gradient(
+    circle, 
+    $light-color 10%, 
+    transparent 10.01%
+  );
+}
+
+.btn-primary{
+  background-color: $color-1st;
+  color: $color-1st-contrast;  
+}
+
+.btn.btn-accent{
+  background-color: $accent-color;
+  color: $accent-color-contrast;  
+}
+
+.btn.btn-white{
+  background-color: $light-color;
+  color: $accent-color;  
+}
+
+.btn.btn-white.ripple:after{
+  background-image: radial-gradient(
+    circle, 
+    $accent-color 10%, 
+    transparent 10.01%
+  );
+}
+
+.btn-lg{
+  padding: $rem-lg $rem-4x;
+  font-size: $rem-2x;
+}
+
+.btn-md{
+  padding: $rem-lg $rem-2x;
+  font-size: $rem-xl;
+}
+
+.btn-sm{
+  padding: $rem-md $rem-xl;
+  font-size: $rem-lg;
+}

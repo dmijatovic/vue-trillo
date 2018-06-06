@@ -1,0 +1,21 @@
+
+@import '../scss/variables';
+
+
+.bg-video{
+  position:absolute;
+  top:0; left:0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  z-index: 0;
+
+  &-content{
+    height:100%;
+    width:100%;
+    //scale video
+    //similar to background position cover
+    object-fit: cover;
+  }
+
+}

@@ -1,0 +1,71 @@
+
+
+@keyframes flyInFromLeft{
+  0%{
+    //hide element
+    opacity: 0;
+    //start from left 0
+    //assuming element is cenetered on the screen
+    transform: translateX(-50vw);
+  }
+
+  100%{
+    //show element
+    opacity: 1;
+    //end at 'normal' position
+    transform: translate(0);
+  }
+
+}
+
+@keyframes flyInFromRight{
+  0%{
+    //hide element
+    opacity: 0;
+    //start from right
+    //assuming element is cenetered on the screen
+    transform: translateX(50vw);
+  }
+
+  100%{
+    //show element
+    opacity: 1;
+    //end at 'normal' position
+    transform: translate(0);
+  }
+
+}
+
+@keyframes flyInFromTop{
+  0%{
+    //hide element
+    opacity: 0;
+    //start from left 0
+    //assuming element is cenetered on the screen
+    transform: translateY(-50vh)
+  }
+
+  100%{
+    //show element
+    opacity: 1;
+    //end at 'normal' position
+    transform: translate(0);
+  }
+}
+
+@keyframes flyInFromBottom{
+  0%{
+    //hide element
+    opacity: 0;
+    //start from left 0
+    //assuming element is cenetered on the screen
+    transform: translateY(33vh);
+  }
+
+  100%{
+    //show element
+    opacity: 1;
+    //end at 'normal' position
+    transform: translate(0);
+  }
+}
