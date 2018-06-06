@@ -37,6 +37,19 @@ export default {
 </script>
 <style lang="scss">
 .user-nav{
+  align-self: stretch;
   display: flex;
+  align-items: stretch;
+  //background-color: red;
+  //select all direct children
+  /*& > *{
+    padding: 0 3rem;
+    cursor: pointer;
+  }
+  //all direct children on hover
+  & > *:hover{
+    background-color: var(--color-light-2);
+  }*/
+
 }
 </style>

@@ -52,3 +52,63 @@ There is a preference to use svg icons above the icon fonts because screen reade
     <use xlink:href="svg/sprite.svg#icon-magnifying-glass"></use>
   </svg>
 ```
+
+### CSS selectors
+
+```scss
+
+  //select all direct children
+  .parent > * {
+
+  }
+
+  //select all syblling elements with className
+  .element ~ .className {
+
+  }
+
+  //select first subceeding sybling element with className
+  .element + .className {
+
+  }
+
+```
+
+### currentColor
+
+Used to apply color of the parent to child element. Very usefull in menus with icons.
+
+```
+  .menu-item{
+    color: red;
+
+    .icon{
+      color: curentColor
+    }
+  }
+
+```
+
+
+### Flex and margin auto
+
+Very usefull 'feature' when you need to justify elements but also want specific element to only use content width.
+
+```scss
+
+  .parent{
+    display: flex;
+    justify-content: space-between;
+
+    child1{
+      flex:1;
+    }
+    //this child will fill the space 
+    //but with margin
+    .child-2{
+      margin-right: auto;
+    }
+  }
+
+
+```

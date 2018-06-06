@@ -1,0 +1,67 @@
+.search{
+  flex: 0 0 33%;
+  display: flex;
+  //center required for expaning animation
+  align-items: center;
+  justify-content: center;  
+  //background-color: orangered;
+  overflow: hidden;  
+  font-size: 1.5rem;
+  color: var(--color-dark-2);
+  
+  &-input{
+    //flex:1;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-light-2);
+    border: none;
+    padding: 1rem 2rem;
+    width: 80%;
+    //negative margin to place button
+    //at the same line as input within
+    //the input 'area'
+    //tweak untill the button is completely within input
+    margin-right: -4rem;
+    border-radius: 5rem;
+
+    //animate
+    transition: all 1s;
+    //expand on focus
+    &:focus{
+      outline: none;
+      width: 100%;
+      background-color: var(--color-light-3);
+      //transform: scaleX(1.5);
+    }
+
+    &::placeholder{
+      //font-size: 2rem;
+      font-weight: 100;
+      color: var(--color-dark-2);
+    }
+  }
+
+  &-button{
+    display: flex;
+    border: none;
+    padding: 1rem 1.5rem 1rem 0.5rem;
+    background-color: var(--color-light-3);
+    //tweak so button has same rounding
+    //as input box
+    border-radius: 0 5rem 5rem 0;
+    &:focus{
+      outline: none;
+    }
+
+    &:active{
+      transform: translateY(2px);
+    }
+  }
+
+  &-icon{
+    width: 2rem;
+    height: 2rem;
+    fill:  var(--color-dark-2);
+  }
+}

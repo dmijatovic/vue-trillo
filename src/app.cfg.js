@@ -27,12 +27,5 @@
     //you refrence using #icon-name
     iconFile:'svg/ico-sprite.svg',
     icoSearch: 'icon-magnifying-glass' 
-  },
-  menuItems:[{
-    link:'#1', label:"Menu item 1", svgIco:"fas fa-home"
-  },{
-    link:'#2', label:"Menu item 2", svgIco:"fab fa-affiliatetheme"
-  },{
-    link:'#3', label:"Menu item 3", svgIco:"fas fa-allergies"
-  }],
+  }
 };

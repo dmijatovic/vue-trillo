@@ -9,7 +9,8 @@
       </h1>
     </div>
     <!-- searchbox -->
-    <search-box></search-box>
+    <search-box
+      placeholder="Search for something..."></search-box>
     <!--user nav -->
     <user-nav></user-nav>
 

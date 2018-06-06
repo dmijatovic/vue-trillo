@@ -1,11 +1,13 @@
 <template>  
-  <form @action.prevent="searchFor" class="search">    
+  <form @submit.prevent="searchFor" class="search">    
     <!-- <h3>Searchbox here</h3> -->
     <input type="text" class="search-input"
       v-model="searchTerm"
-      placeholder="search.label">
+      :placeholder="placeholder">
     
-    <button class="search-button">
+    <button class="search-button"
+      :disabled="searchTerm==''"
+      type="submit">
       <svg class="search-icon">
         <use :xlink:href="svgIcon"></use>
       </svg>
@@ -14,10 +16,16 @@
 </template>
 
 <script>
-import { cfg } from '../app.cfg'; 
+import { cfg } from '../app.cfg';
+import { searchSvc } from './searchSvc';
 export default {  
   props:{
-    search: Object
+    placeholder: String
+  },
+  data(){
+    return {
+      searchTerm:''
+    }
   },
   computed:{
     svgIcon(){
@@ -27,42 +35,16 @@ export default {
   },
   methods:{
     searchFor(){
-      console.log("Search for...", this.searchTerm);
+      //console.log("Search for...", this.searchTerm);
+      //emit sarch request
+      searchSvc.$emit('Search', this.searchTerm);
+      //reset search term???
+      //this.searchTerm = ""
     }
   }
 }
 </script>
 
 <style lang="scss">
-
-.search{
-  display: flex;
-  flex: 0 0 33%;
-  justify-content: space-between;  
-  //background-color: orangered;
-  border-radius: 3px;
-  overflow: hidden;  
-
-  &-input{
-    flex:1;
-    font-family: inherit;
-    font-size: inherit;
-    background-color: var(--color-light-3);
-    border: none;
-    padding: 1rem 2rem;
-    width: 90%;
-  }
-
-  &-button{
-    border: none;
-    padding: 0.5rem 1rem;
-  }
-
-  &-icon{
-    width: 3rem;
-    height: 3rem; 
-  }
-
-}
-
+@import 'searchBox';
 </style>

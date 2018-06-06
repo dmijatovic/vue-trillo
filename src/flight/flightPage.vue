@@ -1,6 +1,6 @@
 <template>
   <section class="app-body">
-    <h1>Hotel page</h1>
+    <h1>Flight page</h1>
   </section>
 </template>
 
