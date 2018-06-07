@@ -1,0 +1,65 @@
+
+.review{
+  &-item{
+    display: block;
+    position: relative;
+    background-color: var(--color-light-0);
+    box-shadow: var(--box-shadow-2);
+    padding: 5rem 3rem 3rem;
+    margin-bottom: 6rem;
+    overflow: hidden;
+  }
+
+  &-text:before{
+    //blockquote char
+    content: "\201C";
+    position: absolute;
+    left:0rem; top:-4rem;
+    color: var(--color-light-4);
+    font-family: sans-serif;
+    font-size: 20rem;
+    z-index: 0;
+  }
+
+  &-text{
+    //position: relative;
+    //padding: 3rem 0rem;
+    margin-bottom: 3rem;
+    z-index: 9;
+  }
+
+  &-person{
+    display: flex;
+    align-items: center;
+  }
+
+  &-person-info{
+    margin-right: auto;
+  }
+
+  &-person-photo{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+
+  &-person-name{
+    font-weight: 600;
+    text-transform: uppercase;
+    color:var(--color-dark-1)
+    //margin-bottom: 1rem;
+  }
+
+  &-date{
+    font-size: 1.75rem;
+    color:var(--color-dark-3);
+  }
+
+  &-score{
+    font-size: 4.5rem;
+    color: var(--color-primary);
+    font-weight:300;
+  }
+
+}

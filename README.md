@@ -163,3 +163,17 @@ When parent element that contains a number of figure elements is set to display:
 }
 
 ```
+
+### Masks (for newer browsers)
+
+[Similair to clipping](https://css-tricks.com/clipping-masking-css/). Mask is set to background (color) and image infront. This is how you can change color of (simple) background image. 
+
+```scss 
+  //shows only background in the countour of the image
+  .item{
+    background-color: var(--color-primary);
+    mask-image: url('img/chrevron-thin-right.svg');
+    mask-size: cover;
+  }
+
+```

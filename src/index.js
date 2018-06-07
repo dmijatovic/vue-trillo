@@ -7,6 +7,11 @@ import App from './app.vue';
 //main - shared - styles
 import './scss/main.scss';
 
+//shared components
+import svgIcon from './system/svgIcon.vue';
+
+Vue.component('svg-icon', svgIcon);
+
 
 //use router
 Vue.use(VueRouter);

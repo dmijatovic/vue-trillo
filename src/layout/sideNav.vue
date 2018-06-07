@@ -14,7 +14,7 @@
             active-class="active"
             :key="item.path">
 
-            <span class="side-menu-link">
+            <span class="side-menu-link u-no-select">
               <svg class="side-menu-icon">
                 <use :xlink:href="item.svgIco"></use>
               </svg>

@@ -23,8 +23,8 @@ export default {
   &-photo{
     display: flex;   
     align-items: center;
-    padding: 0 1rem;
-    margin-right: 3rem;    
+    padding: 0 3rem 0 1rem;
+    //margin-right: 3rem;    
     cursor: pointer; 
   }
 

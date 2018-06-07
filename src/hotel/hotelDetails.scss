@@ -1,0 +1,22 @@
+
+.hotel{
+  &-details{
+    display: flex;
+    padding: 6rem;
+    font-size: 2rem;
+  }
+
+  &-desc{
+    flex: 0 0 60%;
+    margin-right: 6rem;
+    padding: 3rem;
+    background-color: var(--color-light-0);
+    box-shadow: var(--box-shadow-2);
+  }
+
+  &-reviews{
+    position: relative;
+    flex: 1;
+    //background-color: green;
+  }
+}

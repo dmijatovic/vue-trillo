@@ -1,12 +1,74 @@
+/**
+  NOTE! This file is not used directly in this project directly
+  in this project we use CSS variables defined in css-variables file
+  it is included because animations scss uses some of the variables
+*/
+
+/* use $rem-xs for font-size*/
+
+//colors 
+$light-color: #fff;
+//$light-grey-color:""
+$grey-color: #777;
+$dark-color: #333;
+$light-color-contrast: $dark-color;
+$dark-color-contrast: $light-color;
+
+$color-1st: #55c57a;
+$color-1st-light: lighten($color-1st, 25%);
+$color-1st-dark: darken($color-1st, 25%);
+$color-1st-contrast: $dark-color;
+
+$color-2nd: #ffb900;
+$color-2nd-light: lighten($color-2nd,25%);  
+$color-2nd-dark: darken($color-2nd, 25%);
+$color-2nd-contrast: $dark-color;
+
+
+$color-3rd: #1e1eda;
+$color-3rd-light: lighten($color-3rd,25%);  
+$color-3rd-dark: darken($color-3rd, 25%);
+$color-3rd-contrast: $dark-color;
+
+$accent-color: #28b485;
+$accent-color-contrast: $light-color;
+
+$warn-color: darken($color-2nd, 10%);
+$warn-color-contrast: $light-color;
+
+//settin hext in rgba variable is possible
+//with scss code
+$gradient-start:rgba(#7ed56f, 0.8);
+$gradient-end:rgba(#28b485, 0.8);
+
+//size steps
+$rem-xs: 0.25rem;
+$rem-sm: 0.50rem;
+$rem-md: 0.75rem;
+$rem-lg: 1rem;
+$rem-xl: 1.5rem;
+$rem-2x: 2rem;
+$rem-3x: 3rem;
+$rem-4x: 4rem;
+$rem-5x: 5rem;
+$rem-10: 10rem;
+$rem-20: 20rem;
 
 //fonts 
 $font-family: 'Open Sans', sans-serif;
+
 /* use $rem-xs for font-size*/
+
+$font-size-sm: $rem-md;
+$font-size-md: $rem-xl;
+$font-size-lg: $rem-2x;
+$font-size-xl: $rem-3x;
+
 
 $font-weight-xs: 100;
 $font-weight-sm: 300;
 $font-weight-md: 400;
-$font-weight-lg: 600;
+$font-weight-lg: 700;
 $font-weight-xl: 900;
 
 //line height is the ratio 
@@ -17,3 +79,28 @@ $line-height-md: 1.4;
 $line-height-lg: 1.6; 
 $line-height-xl: 1.8; 
 $line-height-2x: 2;
+
+//box shadows
+$box-shadow-color: rgba(0,0,0,.2);
+$box-shadow-xs: 0 0.1rem 0.5rem $box-shadow-color;
+$box-shadow-sm: 0 0.2rem 1rem $box-shadow-color;
+$box-shadow-md: 0 1rem 4rem $box-shadow-color;
+$box-shadow-lg: 0 2rem 8rem $box-shadow-color;
+
+
+//GRID size
+//max width set to 1600px (default)
+$grid-width: 90rem;
+$grid-width-sm: 60rem;
+
+
+$gutter: $rem-2x;
+$gutter-horizontal: $rem-5x;
+$gutter-vertical: $rem-2x;
+
+$border-radius-xs: 2px;
+$border-radius-sm: 3px;
+$border-radius-md: 4px;
+$border-radius-xl: 8px;
+
+

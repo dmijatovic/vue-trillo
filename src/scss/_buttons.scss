@@ -110,3 +110,28 @@
   padding: $rem-md $rem-xl;
   font-size: $rem-lg;
 }
+
+
+/**
+  Inline button used on multiple pages
+  use font-size: inherit to achive 'variable' font size
+*/
+.btn-inline{
+  border: none;
+  outline: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.25rem;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover{
+    //color: var
+  }
+
+  svg{
+    width: 2rem;
+    height: 2rem;
+  }
+}
