@@ -27,5 +27,17 @@
     //you refrence using #icon-name
     iconFile:'svg/ico-sprite.svg',
     icoSearch: 'icon-magnifying-glass' 
+  },
+  hotel:{
+    gallery:[{
+      src:'img/hotel-1.jpg',
+      label:'Image 1. Hotel Spledid at night'
+    },{
+      src:'img/hotel-2.jpg',
+      label:'Image 2. Our marvelous swimming pool'
+    },{
+      src:'img/hotel-3.jpg',
+      label:'Image 3. Splendid in the winter'
+    }]
   }
 };

@@ -134,3 +134,32 @@ Very usefull 'feature' when you need to justify elements but also want specific 
 
 
 ```
+
+### Flex and figure element (displaying images in one line)
+
+When parent element that contains a number of figure elements is set to display:flex AND the image tag is set to 100% (percentage)
+
+```html
+  <section class="gallery">
+    <figure class="gallery-item">
+      <img :src="item.src" alt="item.label" class="gallery-photo">
+      <figcaption class="gallery-item-label">{{item.label}}</figcaption> 
+    </figure>    
+  </section>
+```
+
+```scss
+.gallery{
+  //set images side by side in float
+  //combined with image width defined as %
+  //note! even when 100% is used on the image
+  //flex will size and 'float' these in one row
+  display: flex;
+  &-photo{
+    //relative image size withing figure 'frame'
+    //usually set to 100%% to fill figure completely
+    width: 100%;
+  }
+}
+
+```

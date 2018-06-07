@@ -5,7 +5,7 @@
     <div class="content">
       <side-nav></side-nav>
       <main class="content-body">
-        <h3>Here comes the content</h3>
+        <!--Here comes the content -->
         <router-view></router-view>
       </main>
     </div>    
