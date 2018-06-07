@@ -89,6 +89,28 @@ Used to apply color of the parent to child element. Very usefull in menus with i
 
 ```
 
+### Staging transition
+
+```scss
+  //transition property can be staged, eg running multiple transitions after each other
+  //note! you need to add delays 
+  .item{
+    transform: scaleY(1);
+    width: 10%;
+    //first transform .2 then width, note delay of .2s on second transition
+    //this enables them to run after eachother
+    transition: transform .2s,
+                width .4s .2s 
+  }
+
+  .item:hover{
+    transform: scaleY(1)
+    width: 100%;
+
+  }
+
+```
+
 
 ### Flex and margin auto
 

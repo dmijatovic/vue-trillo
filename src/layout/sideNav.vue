@@ -14,11 +14,12 @@
             active-class="active"
             :key="item.path">
 
-            <svg class="side-menu-icon">
-              <use :xlink:href="item.svgIco"></use>
-            </svg>
-            {{item.label}}
-
+            <span class="side-menu-link">
+              <svg class="side-menu-icon">
+                <use :xlink:href="item.svgIco"></use>
+              </svg>
+              {{item.label}}
+            </span>
           </router-link>
           
         <!--</li>-->
