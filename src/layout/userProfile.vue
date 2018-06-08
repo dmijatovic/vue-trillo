@@ -16,6 +16,7 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../scss/media';
 .user{
   //NO CODE HERE
   //there is no class .user
@@ -25,7 +26,11 @@ export default {
     align-items: center;
     padding: 0 3rem 0 1rem;
     //margin-right: 3rem;    
-    cursor: pointer; 
+    cursor: pointer;
+    //on small screens
+    @media screen and (max-width: $width-sm){
+      padding: 0 1rem;
+    }
   }
 
   &-photo:hover{
@@ -41,6 +46,11 @@ export default {
   }
   &-name{
     font-size: 2rem;
+    //on small screens
+    @media screen and (max-width: $width-sm){
+      //hide name
+      display:none;
+    }
   }
 }
 </style>

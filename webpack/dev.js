@@ -51,11 +51,20 @@ module.exports = {
 				//extract css into separate file
 				MiniCssExtractPlugin.loader,
 				{
-					loader: 'css-loader'
+					loader: 'css-loader',
+					options:{
+						sourceMap:true
+					}
 				},{
-					loader: 'postcss-loader'
+					loader: 'postcss-loader',
+					options:{
+						sourceMap:true
+					}
 				},{
-					loader: 'sass-loader'
+					loader: 'sass-loader',
+					options:{
+						sourceMap:true
+					}
 			}]
 		},{
 			/* config.module.rule('fonts') */		

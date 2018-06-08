@@ -7,67 +7,29 @@
   into account users that changed default fonts from 16 to larger/smaller.
 
   So to define breakpoints in your media query follow this process
-  define breakpoints in px. Then divide breakpoint px / 16. This 
+  define breakpoints in px. Then divide breakpoint px / 16. This gives
   you em media query value to use. 
+
+  Then set specific font-size on the root html element as perceantage (eg 50% = 8px = 1rem)
+  Further in your CSS code use rem to express all dimensions knowing the fact that
+  by default 100% default font-size is 16px, eg 1rem = 16px by default.
 */
 
-/*
-  0-600px: mobile phone - xs
-  600-900: tablet portrait - sm
-  900-1200: tablet - md
-  1200-1800: normal styles (default styles we already have)
-  >1800: big desktop - xl
-*/
+//THIS PROJECT USES FLEXBOX 
+//SIMPLE MEDIA QUERIES ARE PLACED in layout and component files
+//HERE WE KEEP screen size variables.
+//NOTE! you CANNOT use CSS variables in media-queries
 
-@mixin respond-phone{
-  //@conent enables passing content
-  @media(max-width: 600px) { @content };
-}
+//various screen sizes in em
+//note! in media queries we use em
+//but in all othes styles we use rem
 
-/* 
-$breakpoint agument constant 
-- phone - xs
-- tab-port - sm
-- tab-land - md
-- large - xl
-*/
+//1280px/16 = 80em
+$width-md: 80em;
+//1024px/16
+$width-sm: 64em;
+//704px/16
+$width-xs: 44em;
+//480px/16
+$width-ss: 30em;
 
-//ORDER MATTERS!
-//sizes xs, sm, md use min-width and xl uses max-width
-//the order need to be reversed to md, sm, xs, xl when applying
-//beacuse the order determines which style will win at the end
-//IMPORTANT! the order enables you then to apply one style for
-//multiple sizes, for example: if you want specific style for 
-//md, sm and xs then you just can use md and other will fall 
-//in the same category
-
-
-@mixin responsive($breakpoint){
-  //using if
-  //if breakpoint phone use content 
-  //passed for this breakpoint
- 
-  @if $breakpoint == xs {
-    //estimated 600px
-    @media only screen and (max-width: 37.50em) { @content };
-  }
-
-  @if $breakpoint == sm {
-    //calculated 600 - 1024 px/16
-    //@media (min-width: 37.51em) and (max-width: 56.25em) { @content };
-    @media only screen and (max-width: 64em) { @content };
-  }
-
-  @if $breakpoint == md {
-    //calc 1024 - 1280px/16
-    @media only screen and (max-width: 80em) { @content };
-  }
-
-  //default is 1280px - 1800px
-
-  @if $breakpoint == xl {
-    //calc > 1800px 
-    @media only screen and (min-width: 112.5em) { @content };
-  }
-
-}

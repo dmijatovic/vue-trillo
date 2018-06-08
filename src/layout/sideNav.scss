@@ -1,4 +1,6 @@
 
+@import '../scss/media';
+
 .side{
   //keep it on 18% ratio
   flex: 0 0 18%;
@@ -7,26 +9,61 @@
   justify-content: space-between;
   background-color: var(--color-dark-1);
 
+  @media screen and (max-width: $width-sm){
+    flex:none;
+  }
+
+
   //ul element
   &-menu{
     position: relative;
     list-style: none;
     font-size: 2rem;
     margin-top: 4rem;
+
+    //on small screens 
+    @media screen and (max-width: $width-sm){
+      //place menu horizontally
+      display: flex;
+      //remove margin
+      margin-top:0;
+    }
+
   }  
   //li elements
   &-menu-item{
     //display: flex;
     position: relative;
     //align-items: center;
-    padding: 2rem;
     display: flex;
+    padding: 2rem;
     color: var(--color-light-1);
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
-    &:not(:last-child){
-      margin-bottom: 1rem;
+
+    //on large screens
+    @media screen and (min-width: $width-md ){
+      
+      //add bottom margin
+      &:not(:last-child){
+        margin-bottom: 1rem;
+      }
+    }    
+
+    //on small screens place menu horizontally 
+    @media screen and (max-width: $width-sm){
+      //remove margin;
+      margin-bottom:0;
+      //expand items to max
+      flex:1;
+    }
+    //on very small screens
+    @media screen and (max-width: $width-xs){
+      //decrease padding
+      padding: 1rem;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -69,6 +106,13 @@
     position: relative;
     display: flex;
     z-index: 1;
+
+    //on very small screens
+    @media screen and (max-width: $width-xs){
+      //place icon and text in columns
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   //svg element
@@ -79,12 +123,24 @@
     //use color from the parent!
     //in this case menu-link
     fill: currentColor;
+    //on very small screens
+    @media screen and (max-width: $width-xs){
+      //remove margin
+      margin: 1rem;
+    }
+    
   }
 
   //div at the bottom
   &-copyright{
     font-size: 1.5rem;
     padding: 2rem;
+
+
+    @media screen and (max-width: $width-sm){
+      display:none;
+    }
+
   }
 
 }
