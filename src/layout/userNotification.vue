@@ -49,6 +49,7 @@ export default {
     //padding: 1rem;
     height: 3rem;
     width: 3rem;
+    font-size: 1.25rem;
     background-color:var(--color-primary-dark);
     color: #fff;
     border-radius: 50%;
