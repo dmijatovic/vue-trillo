@@ -1,15 +1,19 @@
 <template>
   <section class="app-body">
-    <h1>Flight page</h1>
+    <under-construction></under-construction>
   </section>
 </template>
 
 <script>
 export default {
-
+  data(){
+    return {
+      msg:'This is test'
+    }
+  }
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

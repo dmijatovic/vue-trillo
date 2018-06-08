@@ -9,9 +9,11 @@ import './scss/main.scss';
 
 //shared components
 import svgIcon from './system/svgIcon.vue';
-
+import underConstruction from './system/underConstruction.vue';
+import appLoader from './system/appLoader.vue';
 Vue.component('svg-icon', svgIcon);
-
+Vue.component('under-construction', underConstruction);
+Vue.component('app-loader', appLoader);
 
 //use router
 Vue.use(VueRouter);

@@ -30,6 +30,10 @@ html{
   //estimated 8px=1rem;
   font-size: 50%;
 
+  @media screen and (max-width: $width-md) {
+    font-size: 37.5%;
+  }
+
   @media screen and (max-width: $width-ss) {
     font-size: 25%;
   }
@@ -71,12 +75,23 @@ body{
   justify-content: stretch;
   &-body{
     flex: 1;
-    //background-color: orangered;
+    //background-color: orangered; 
   }
   
 
   @media screen and (max-width: $width-sm){
     flex-direction: column;
   }
+}
 
+
+.app-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  //margin: 2rem;
+  //this is only for demo purpose
+  min-height: 84vh;
+  //flex:1;
 }

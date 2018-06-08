@@ -98,6 +98,9 @@
       date: new Date(),
       score: 7.9
     }]
-    
+  },
+  underConstruction:{
+    image:'',
+    msg:'This page is under construction - demo'
   }
 };

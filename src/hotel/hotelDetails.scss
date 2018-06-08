@@ -3,7 +3,7 @@
 .hotel{
   &-details{
     display: flex;
-    padding: 6rem;
+    padding: 6rem 4rem;
     font-size: 2rem;
 
     //on small screens
@@ -11,8 +11,13 @@
       //colapse
       flex-direction: column;
       //reduce padding
-      padding: 1rem;
+      //padding: 1rem;
     }
+    //on very small screens move search to next row
+    @media screen and (max-width: $width-xs) {
+      padding: 4rem 2rem;
+    }
+    
   }
 
   &-desc{
