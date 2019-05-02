@@ -1,8 +1,6 @@
 # Trillo - advanced CSS/SCSS training - and Vuejs app
 
-This repo is based on [advanced CSS/SCSS training](https://www.udemy.com/advanced-css-and-sass/) which is then integrated in Vue.js app.
-
-The original github project created by instructor Jonas Schmedtmann [can be found here](https://github.com/jonasschmedtmann/advanced-css-course).
+Hotels booking website example using Vue.js. This repo is based on [advanced CSS/SCSS training](https://www.udemy.com/advanced-css-and-sass/) which is then integrated in Vue.js app. The original github project created by instructor Jonas Schmedtmann [can be found here](https://github.com/jonasschmedtmann/advanced-css-course).
 
 **Note, the project setup in this repo is advanced. It assumes you are familiair with number of technologies (webpack, node, npm, sass, vuejs). If you are new to front-end development and mentioned technologies I recommend following both trainings mentioned above first. That will help your better distinct between web-design tools and front-end framework-technology used and the specific choices/preferences I used in this repo.**
 
@@ -26,15 +24,14 @@ This project layout is done using [flexbox layout](https://css-tricks.com/snippe
 CSS variables are usually defined in :root element. The advantage of CSS variable above SCSS variables is that CSS variables are included in compiled CSS code and can be used 'on-the-fly' by JavaScript.
 
 ```css
-  :root{
-    /* primary color CSS variable */
-    --color-primary: #fff;
-  }
-  /* usage with keywoard var(--variable-name) */
-  body{
-    background-color: var(--color-primary);
-  }
-
+:root {
+  /* primary color CSS variable */
+  --color-primary: #fff;
+}
+/* usage with keywoard var(--variable-name) */
+body {
+  background-color: var(--color-primary);
+}
 ```
 
 ### Using SVG icons (sprite)
@@ -42,36 +39,31 @@ CSS variables are usually defined in :root element. The advantage of CSS variabl
 There is a preference to use svg icons above the icon fonts because screen readers seem confused when the icon-fonts are used on the page.
 
 ```html
-  <!-- use with sprite file
+<!-- use with sprite file
     1. insert svg tag 
     2. inser use tag with xlink:href prop
     3. define location of svg file
     4. define icon in sprite file using # (to reffer to symbol id)
   -->
-  <svg class="search-icon">
-    <use xlink:href="svg/sprite.svg#icon-magnifying-glass"></use>
-  </svg>
+<svg class="search-icon">
+  <use xlink:href="svg/sprite.svg#icon-magnifying-glass"></use>
+</svg>
 ```
 
 ### CSS selectors
 
 ```scss
+//select all direct children
+.parent > * {
+}
 
-  //select all direct children
-  .parent > * {
+//select all syblling elements with className
+.element ~ .className {
+}
 
-  }
-
-  //select all syblling elements with className
-  .element ~ .className {
-
-  }
-
-  //select first subceeding sybling element with className
-  .element + .className {
-
-  }
-
+//select first subceeding sybling element with className
+.element + .className {
+}
 ```
 
 ### currentColor
@@ -93,14 +85,14 @@ Used to apply color of the parent to child element. Very usefull in menus with i
 
 ```scss
   //transition property can be staged, eg running multiple transitions after each other
-  //note! you need to add delays 
+  //note! you need to add delays
   .item{
     transform: scaleY(1);
     width: 10%;
     //first transform .2 then width, note delay of .2s on second transition
     //this enables them to run after eachother
     transition: transform .2s,
-                width .4s .2s 
+                width .4s .2s
   }
 
   .item:hover{
@@ -111,28 +103,24 @@ Used to apply color of the parent to child element. Very usefull in menus with i
 
 ```
 
-
 ### Flex and margin auto
 
 Very usefull 'feature' when you need to justify elements but also want specific element to only use content width.
 
 ```scss
+.parent {
+  display: flex;
+  justify-content: space-between;
 
-  .parent{
-    display: flex;
-    justify-content: space-between;
-
-    child1{
-      flex:1;
-    }
-    //this child will fill the space 
-    //but with margin
-    .child-2{
-      margin-right: auto;
-    }
+  child1 {
+    flex: 1;
   }
-
-
+  //this child will fill the space
+  //but with margin
+  .child-2 {
+    margin-right: auto;
+  }
+}
 ```
 
 ### Flex and figure element (displaying images in one line)
@@ -140,40 +128,38 @@ Very usefull 'feature' when you need to justify elements but also want specific 
 When parent element that contains a number of figure elements is set to display:flex AND the image tag is set to 100% (percentage)
 
 ```html
-  <section class="gallery">
-    <figure class="gallery-item">
-      <img :src="item.src" alt="item.label" class="gallery-photo">
-      <figcaption class="gallery-item-label">{{item.label}}</figcaption> 
-    </figure>    
-  </section>
+<section class="gallery">
+  <figure class="gallery-item">
+    <img :src="item.src" alt="item.label" class="gallery-photo" />
+    <figcaption class="gallery-item-label">{{item.label}}</figcaption>
+  </figure>
+</section>
 ```
 
 ```scss
-.gallery{
+.gallery {
   //set images side by side in float
   //combined with image width defined as %
   //note! even when 100% is used on the image
   //flex will size and 'float' these in one row
   display: flex;
-  &-photo{
+  &-photo {
     //relative image size withing figure 'frame'
     //usually set to 100%% to fill figure completely
     width: 100%;
   }
 }
-
 ```
 
 ### Masks (for newer browsers)
 
-[Similair to clipping](https://css-tricks.com/clipping-masking-css/). Mask is set to background (color) and image infront. This is how you can change color of (simple) background image. 
+[Similair to clipping](https://css-tricks.com/clipping-masking-css/). Mask is set to background (color) and image infront. This is how you can change color of (simple) background image.
 
-```scss 
-  //shows only background in the countour of the image
-  .item{
-    background-color: var(--color-primary);
-    mask-image: url('img/chrevron-thin-right.svg');
-    mask-size: cover;
-  }
-
+```scss
+//shows only background in the countour of the image
+.item {
+  background-color: var(--color-primary);
+  mask-image: url("img/chrevron-thin-right.svg");
+  mask-size: cover;
+}
 ```
