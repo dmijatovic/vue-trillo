@@ -9,8 +9,7 @@ stages:
   - stage: build
     jobs:
     - job: febuild
-      pool:
-        vmImage: node:10-alpine
+      container: node:10-alpine
       steps:
       - bash: npm install
       - bash: npm run build
