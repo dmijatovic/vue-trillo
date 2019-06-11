@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --env=dev",
     "build": "webpack --env=prod",
-    "test": "echo \"This is test of npm test call\""
+    "test": "ech \"This is test of npm test call\""
   },
   "keywords": [
     "advanced scss",

@@ -3,21 +3,21 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- master
+  - master
 
 stages:
-  - stage: build    
+  - stage: build
     jobs:
-    - job: febuild
-      pool: 
-        vmImage: 'ubuntu 16.04'
-      steps:
-      - bash: npm install
-      - bash: npm run build
-      - bash: npm run test
+      - job: febuild
+        pool:
+          vmImage: "ubuntu 16.04"
+        steps:
+          - bash: npm install
+          - bash: npm run test
+          - bash: npm run build
   - stage: deploy
     jobs:
       - job: githubdeploy
-        displayName: Deploy to Github pages        
+        displayName: Deploy to Github pages
         steps:
           - bash: echo "This is test of deployments"
