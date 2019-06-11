@@ -9,19 +9,15 @@ stages:
   - stage: build
   jobs:
     - job: fe-build
-    displayName: Build Vue frontend
-    container: node:10-alpine
+    pool:
+      vmImage: node:10-alpine
     steps:
       - bash: npm install
       - bash: npm run build
-    -job: fe-test
-    displayName: Test vue frontend
-    steps:
       - bash: npm run test
   - stage: deploy
-  displayName: deploy to github pages
   jobs:
-    -job: github-deploy
+    - job: github-deploy
     displayName: Deploy to Github pages
     container: alpine:3.9
     steps:
